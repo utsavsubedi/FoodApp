@@ -1,0 +1,26 @@
+{% extends 'Main/base.html' %}
+{% block content %}
+<br>
+    <div class="container">
+        <div class="row">
+            <div class="col md-3 offset-md-2">
+                <img src="{{ item.item_image }}" alt="{{item.item_name}} image" height="150">
+            </div>
+            <div class="col-md-3">
+                <h3>{{ object.item_name }}</h3>
+                <h3>{{ object.item_description }}</h3>
+                <h3>${{ object.item_price }}</h3>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            
+        </div>
+        <div class = "row">
+            <div class="col-md-2 offset-md-5">
+                <a href="{% url 'food:delete_items' item.pk %}" class="btn btn-danger" >Delete</a>
+            </div>
+        </div>
+        
+    </div>
+{% endblock content %}
